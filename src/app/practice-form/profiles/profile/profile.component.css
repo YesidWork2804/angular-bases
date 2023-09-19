@@ -1,0 +1,60 @@
+/* Estilos para el contenedor principal */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Estilos para el formulario */
+form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  text-align: left;
+}
+
+/* Estilos para las etiquetas */
+label {
+  display: block;
+  /* margin-bottom: 10px; */
+  text-align: left; /* Alinea las etiquetas a la izquierda */
+}
+
+/* Estilos para los campos de entrada */
+input[name="newPassword"],
+input[name="passwordConfirm"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilos para el botón */
+button.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos para el botón al pasar el ratón por encima */
+button.btn:hover {
+  background-color: #0056b3;
+}
+
+.ng-touched.ng-invalid:is(input,textarea),
+ng-dirty.ng-invalid:is(input,textarea){
+  outline: 2px solid #bd0c0c;
+}
+
+.ng-dirty.ng-pending:is(input,textarea){
+  outline: 2px solid #838a2a;
+}

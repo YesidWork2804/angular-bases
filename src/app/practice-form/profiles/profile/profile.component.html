@@ -1,0 +1,34 @@
+<h1>Cambiar Contraseña</h1>
+<form [formGroup]="passwordChangeForm">
+  <label>
+    Nueva Contraseña
+    <input
+    autocomplete="off"
+    type="password"
+     name="newPassword"
+      formControlName="newPassword">
+  </label>
+  <div class="erros-container" *ngIf="newPasswordControl.invalid && (newPasswordControl.touched || newPasswordControl.dirty)">
+    <p class="text-danger" *ngIf="newPasswordControl.hasError('required')">El Campo es obligatorio </p>
+  </div>
+  <label>
+    Confirmar Contraseña
+    <input type="password" name="passwordConfirm" formControlName="passwordConfirm">
+  </label>
+  <div class="erros-container" *ngIf=" (passwordConfirmControl.touched || passwordConfirmControl.dirty)">
+    <p class="text-danger"
+    *ngIf="!validationPassword()">
+    Las Contraseñas deben de Coincidir </p>
+  </div>
+</form>
+<!-- <pre>{{passwordChangeForm.value | json}}</pre> -->
+<button
+[disabled]="
+!validationPassword() ||
+passwordConfirmControl.invalid ||
+(!passwordConfirmControl.touched || !passwordConfirmControl.dirty)
+"
+ type="button" class="btn btn-outline-primary">Ingresar</button>
+
+
+
